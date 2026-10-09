@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LotoPreditor — Lotofácil</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>🍀 LotoPreditor <span>Lotofácil</span></h1>
+<p class="sub">Análise dos últimos concursos + geração estatística de jogos</p>
+
+<div class="disclaimer">⚠️ <b>Transparência total:</b> loteria é aleatória e cada sorteio é independente.
+Nenhum algoritmo aumenta a probabilidade real de acerto — toda combinação de 15 números tem exatamente
+<b>1 chance em 3.268.760</b>. Esta ferramenta gera jogos <i>aderentes ao padrão histórico</i> (soma, paridade,
+repetidas etc.) para evitar combinações atípicas. Jogue com responsabilidade.</div>
+
+<section class="panel">
+  <h2>1️⃣ Resultados oficiais da Lotofácil</h2>
+  <textarea id="historyInput" placeholder="Os concursos da API serão carregados automaticamente. Também dá para colar manualmente, 1 por linha, 15 números cada."></textarea>
+  <div class="row">
+    <button id="btnLoadApi" class="primary">📡 Carregar da API</button>
+    <button id="btnExample">📋 Carregar exemplo</button>
+    <button id="btnAnalyze">🔍 Analisar</button>
+  </div>
+  <div class="error" id="parseError"></div>
+</section>
+
+<section class="panel hidden" id="analysisPanel">
+  <h2>2️⃣ Análise estatística</h2>
+  <div id="freqChart"></div>
+  <div id="analysisStats"></div>
+</section>
+
+<section class="panel hidden" id="genPanel">
+  <h2>3️⃣ Gerar jogos</h2>
+  <div class="row">
+    <select id="strategy">
+      <option value="genetico">🧬 Algoritmo Genético (recomendado)</option>
+      <option value="hybrid">⚖️ Híbrido (frequência + atraso + coocorrência)</option>
+      <option value="freq">🔥 Frequência (números quentes)</option>
+      <option value="delay">🧊 Atraso (números frios)</option>
+      <option value="markov">🔗 Coocorrência (pares entre concursos)</option>
+    </select>
+    <label>Quantidade: <input id="count" type="number" min="1" max="10" value="3" style="width:70px"></label>
+    <button id="btnGenerate" class="primary">🎲 Gerar</button>
+  </div>
+  <div id="results"></div>
+</section>
+
+<section class="panel hidden" id="checkPanel">
+  <h2>4️⃣ Conferir com o resultado oficial</h2>
+  <input id="checkInput" placeholder="Cole aqui os 15 números sorteados">
+  <button id="btnCheck" class="primary">✅ Conferir</button>
+  <div id="checkResults"></div>
+</section>
+
+<footer>Chance real de 15 acertos: <b>1 em 3.268.760</b> por aposta de 15 números.<br>
+Resultados oficiais em loterias.caixa.gov.br · Jogue com responsabilidade · +18</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

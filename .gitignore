@@ -1,0 +1,80 @@
+# ─── Sistema Operacional ─────────────────────────────────────────────────────
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ─── Editores e IDEs ──────────────────────────────────────────────────────────
+
+# Visual Studio Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# JetBrains (WebStorm, IntelliJ, etc.)
+.idea/
+*.iml
+
+# Vim / Neovim
+*.swp
+*.swo
+*.swn
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+
+# ─── Logs e temporários ───────────────────────────────────────────────────────
+
+*.log
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# ─── Projeto Web Estático ─────────────────────────────────────────────────────
+
+# Dependências Node (caso venha a usar ferramentas como live-server, prettier, etc.)
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build / dist gerados por bundlers
+dist/
+build/
+out/
+.parcel-cache/
+.cache/
+
+# Variáveis de ambiente e segredos
+.env
+.env.*
+!.env.example
+
+# ─── Cobertura de testes ─────────────────────────────────────────────────────
+
+coverage/
+.nyc_output/
